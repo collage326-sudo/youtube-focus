@@ -1,0 +1,6 @@
+{
+  "name": "YouTube Focus",
+  "description": "A redesigned YouTube platform for school students to support focused learning, featuring learning mode, educational recommendations, progress tracking, study playlists, a Pomodoro timer, and an AI Study Buddy.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base style overrides for Bento theme */
+body {
+  background-color: #030712;
+  background-image: radial-gradient(circle at 50% 0%, #0d1e36 0%, #030712 70%);
+  background-attachment: fixed;
+  color: #f1f5f9;
+}
+
+/* Custom aesthetic scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+/* Bento card custom utilities in Tailwind v4 style */
+@utility bento-card {
+  background-color: rgba(8, 12, 22, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.25);
+  border-radius: 1.25rem; /* rounded-2xl */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+@utility bento-card-interactive {
+  composes: bento-card;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: rgba(20, 184, 166, 0.4); /* Teal-500/40 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(20, 184, 166, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  }
+}
+
+@utility bento-highlight-cyan {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(20, 184, 166, 0.12), transparent 50%);
+    pointer-events: none;
+  }
+}
+
+@utility bento-highlight-purple {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.12), transparent 50%);
+    pointer-events: none;
+  }
+}
+
+@utility bento-highlight-amber {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 50%);
+    pointer-events: none;
+  }
+}
+
+@utility bento-highlight-rose {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(244, 63, 94, 0.12), transparent 50%);
+    pointer-events: none;
+  }
+}
+
+/* Elegant keyframe animations for focused breathing or state alerts */
+@keyframes breathing-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(13, 148, 136, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    border-color: rgba(13, 148, 136, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(13, 148, 136, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    border-color: rgba(13, 148, 136, 0.6);
+  }
+}
+
+.animate-breath-glow {
+  animation: breathing-glow 4s ease-in-out infinite;
+}
+
+/* Smooth glassmorphism styles */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
